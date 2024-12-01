@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<nav class="navbar">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="available-properties.html">Available Properties</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+</nav>
+
+<body>
+    <h1>Real Estate Property Details</h1>
+    <div id="product-detail"></div>
+    <a href="available-properties.html" class="back-link">Back to Properties Listing</a>
+
+    <script>
+        // Get the product ID (Plot Number) from the query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const plotNumber = urlParams.get('Plot_Number'); // Fetch the "Plot_Number" from the URL
+
+
+        fetch('data/products.json')
+            .then(response => response.json())
+            .then(data => {
+                // Find the matching plot using Plot_Number
+                const product = data.find(item => item.Plot_Number == plotNumber);
+                const detailDiv = document.getElementById('product-detail');
+
+                if (product) {
+                    // Render product details
+                    detailDiv.innerHTML = `
+                            <img src="${product.image}" alt="Plot ${product.Plot_Number}" style="width: 300px; height: auto;">
+                            <h2>Plot Number: ${product.Plot_Number}</h2>
+                            <p>Size: ${product.Size}</p>
+                            <p>Cost Estimation: ${product.Cost_Estimation}</p>
+                            <p>Major Hubs:</p>
+                            <ul>
+                                <li>Airport: ${product.Major_Hubs?.Airport || 'N/A'}</li>
+                                <li>AP University: ${product.Major_Hubs?.AP_University || 'N/A'}</li>
+                                <li>Temple: ${product.Major_Hubs?.Temple || 'N/A'}</li>
+                            </ul>
+                            <p>Facing: ${product.Facing}</p>
+                            <p>Nearby Road Width: ${product.Nearby_Road_Width}</p>
+                            <p>Electricity: ${product.Electricity}</p>
+                            <p>Road Facility: ${product.Road_Facility}</p>
+                            <p>Land Use: ${product.Land_Use}</p>
+                           
+                        `;
+
+                } else {
+                    // If no matching product is found
+                    detailDiv.innerHTML = `<p>Plot not found. Please check the Plot Number.</p>`;
+                }
+            });
+    </script>
+
+</body>
+
+</html>

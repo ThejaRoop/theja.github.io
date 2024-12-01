@@ -1,0 +1,172 @@
+[
+    {
+        "Plot_Number": 7980,
+        "Size": "43 sq ft * 53 sq ft (1897 sqft)",
+        "Cost_Estimation": "3,483,578 rupees",
+        "Major_Hubs": {
+            "Airport": "2 km",
+            "AP_University": "3 km",
+            "Temple": "2 km"
+        },
+        "Facing": "West Facing",
+        "Nearby_Road_Width": "50 Feet wide road",
+        "Electricity": "Not Available",
+        "Road_Facility": "Concrete road with access to highway 1",
+        "Photos": 8,
+        "Land_Use": "Commercial",
+        "image": "data/images/7980.jpg"
+    },
+    {
+        "Plot_Number": 4905,
+        "Size": "45 sq ft * 55 sq ft (1961 sqft)",
+        "Cost_Estimation": "4,247,412 rupees",
+        "Major_Hubs": {
+            "Airport": "5 km",
+            "AP_University": "4 km",
+            "Temple": "5 km"
+        },
+        "Facing": "North Facing",
+        "Nearby_Road_Width": "50 Feet wide road",
+        "Electricity": "Not Available",
+        "Road_Facility": "Gravel road with limited access",
+        "Photos": 3,
+        "Land_Use": "Agricultural",
+        "image": "data/images/4905.jpg"
+    },
+    {
+        "Plot_Number": 9891,
+        "Size": "45 sq ft * 40 sq ft (1512 sqft)",
+        "Cost_Estimation": "3,022,020 rupees",
+        "Major_Hubs": {
+            "Airport": "3 km",
+            "AP_University": "2 km",
+            "Temple": "2 km"
+        },
+        "Facing": "East Facing",
+        "Nearby_Road_Width": "60 Feet wide road",
+        "Electricity": "Not Available",
+        "Road_Facility": "Concrete road with access to highway 1",
+        "Photos": 8,
+        "Land_Use": "Mixed",
+        "image": "data/images/9891.jpg"
+    },
+    {
+        "Plot_Number": 4888,
+        "Size": "35 sq ft * 54 sq ft (2263 sqft)",
+        "Cost_Estimation": "2,154,571 rupees",
+        "Major_Hubs": {
+            "Airport": "3 km",
+            "AP_University": "5 km",
+            "Temple": "3 km"
+        },
+        "Facing": "North Facing",
+        "Nearby_Road_Width": "50 Feet wide road",
+        "Electricity": "Not Available",
+        "Road_Facility": "Concrete road with access to highway 1",
+        "Photos": 10,
+        "Land_Use": "Commercial",
+        "image": "data/images/4888.jpg"
+    },
+    {
+        "Plot_Number": 9529,
+        "Size": "50 sq ft * 40 sq ft (2852 sqft)",
+        "Cost_Estimation": "3,231,080 rupees",
+        "Major_Hubs": {
+            "Airport": "3 km",
+            "AP_University": "1 km",
+            "Temple": "3 km"
+        },
+        "Facing": "West Facing",
+        "Nearby_Road_Width": "40 Feet wide road",
+        "Electricity": "Available",
+        "Road_Facility": "Gravel road with limited access",
+        "Photos": 6,
+        "Land_Use": "Residential",
+        "image": "data/images/9529.jpg"
+    },
+    {
+        "Plot_Number": 1417,
+        "Size": "31 sq ft * 54 sq ft (1759 sqft)",
+        "Cost_Estimation": "4,481,046 rupees",
+        "Major_Hubs": {
+            "Airport": "2 km",
+            "AP_University": "1 km",
+            "Temple": "1 km"
+        },
+        "Facing": "North Facing",
+        "Nearby_Road_Width": "40 Feet wide road",
+        "Electricity": "Not Available",
+        "Road_Facility": "Gravel road with limited access",
+        "Photos": 3,
+        "Land_Use": "Agricultural",
+        "image": "data/images/1417.jpg"
+    },
+    {
+        "Plot_Number": 5746,
+        "Size": "49 sq ft * 46 sq ft (1852 sqft)",
+        "Cost_Estimation": "4,604,520 rupees",
+        "Major_Hubs": {
+            "Airport": "4 km",
+            "AP_University": "2 km",
+            "Temple": "1 km"
+        },
+        "Facing": "North Facing",
+        "Nearby_Road_Width": "40 Feet wide road",
+        "Electricity": "Available",
+        "Road_Facility": "Concrete road with access to highway 1",
+        "Photos": 10,
+        "Land_Use": "Agricultural",
+        "image": "data/images/5746.jpg"
+    },
+    {
+        "Plot_Number": 1091,
+        "Size": "46 sq ft * 50 sq ft (2395 sqft)",
+        "Cost_Estimation": "2,531,676 rupees",
+        "Major_Hubs": {
+            "Airport": "5 km",
+            "AP_University": "3 km",
+            "Temple": "5 km"
+        },
+        "Facing": "North Facing",
+        "Nearby_Road_Width": "60 Feet wide road",
+        "Electricity": "Available",
+        "Road_Facility": "Concrete road with access to highway 1",
+        "Photos": 3,
+        "Land_Use": "Commercial",
+        "image": "data/images/1091.jpg"
+    },
+    {
+        "Plot_Number": 1684,
+        "Size": "34 sq ft * 59 sq ft (1942 sqft)",
+        "Cost_Estimation": "2,350,211 rupees",
+        "Major_Hubs": {
+            "Airport": "3 km",
+            "AP_University": "4 km",
+            "Temple": "5 km"
+        },
+        "Facing": "South Facing",
+        "Nearby_Road_Width": "40 Feet wide road",
+        "Electricity": "Available",
+        "Road_Facility": "Gravel road with limited access",
+        "Photos": 3,
+        "Land_Use": "Mixed",
+        "image": "data/images/1684.jpg"
+    },
+    {
+        "Plot_Number": 3612,
+        "Size": "32 sq ft * 57 sq ft (1793 sqft)",
+        "Cost_Estimation": "4,270,983 rupees",
+        "Major_Hubs": {
+            "Airport": "3 km",
+            "AP_University": "1 km",
+            "Temple": "3 km"
+        },
+        "Facing": "West Facing",
+        "Nearby_Road_Width": "40 Feet wide road",
+        "Electricity": "Available",
+        "Road_Facility": "Concrete road with access to highway 1",
+        "Photos": 6,
+        "Land_Use": "Mixed",
+        "image": "data/images/3612.jpg"
+    }
+]

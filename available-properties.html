@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work | VSP Infra Projects</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="hero">
+        <h1>Available real estate properties</h1>
+        <p>Explore our available real estate properties - plots.</p>
+    </header>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="available-properties.html">Available Properties</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section id="projects">
+        <!-- Project images and descriptions will be dynamically added here -->
+    </section>
+    <h1>Real Estate Property Listing</h1>
+
+    <!-- Navigation Pane -->
+    <div id="navigation">
+        <h3>Quick Navigation - Select Plot Number </h3>
+        <ul id="nav-list"></ul>
+    </div>
+
+    <!-- Product List -->
+    <div id="product-container"></div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" title="Go to Top">&#8593;</button>
+
+    <script>
+        // Fetch data from JSON
+        fetch('data/products.json')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('product-container');
+                const navList = document.getElementById('nav-list');
+
+                data.forEach(product => {
+                    // Add navigation link
+                    const navItem = document.createElement('li');
+                    navItem.innerHTML = `<a href="#product-${product.Plot_Number}">${product.Plot_Number}</a>`;
+                    navList.appendChild(navItem);
+
+                    // Add product section
+                    const productDiv = document.createElement('div');
+                    productDiv.id = `product-${product.Plot_Number}`; // Unique ID for navigation
+                    productDiv.innerHTML = `
+                        <h2>Plot Number - ${product.Plot_Number}</h2>
+                        <p>Size: ${product.Size}</p>
+                        <p>Price: ${product.Cost_Estimation}</p>
+                       <a href="detail.html?Plot_Number=${product.Plot_Number}">View Details</a>
+
+                    `;
+                    container.appendChild(productDiv);
+                });
+            });
+
+        // Scroll to top button functionality
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        // When the user scrolls down 100px from the top of the document, show the button
+        window.onscroll = function () {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        };
+
+        // When the user clicks on the button, scroll to the top of the document
+        scrollToTopBtn.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+
+
+    <footer>
+        <p>&copy; 2024 VSP Infra Projects | All rights reserved</p>
+    </footer>
+
+</body>
+
+</html>
