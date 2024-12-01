@@ -108,33 +108,43 @@ footer {
 }
 
 
-
-/* Carousel Styles */
 .carousel {
     position: relative;
-    margin-top: 40px;
+    width: 900px;
+    height: 400px;
+    /* Adjust based on your layout */
+    overflow: hidden;
+    margin: auto;
 }
 
-.carousel-track {
-    display: flex;
+.carousel-track-container {
     overflow: hidden;
     width: 100%;
 }
 
-.carousel img {
-    width: 100%;
-    height: auto;
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
 }
 
-button {
-    background-color: #ff9900;
-    border: none;
-    padding: 10px;
-    color: white;
-    cursor: pointer;
+.carousel-image {
+    min-width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.carousel-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 2;
 }
 
 #prev {
@@ -144,6 +154,11 @@ button {
 #next {
     right: 10px;
 }
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
 
 /* Form Styles */
 form {

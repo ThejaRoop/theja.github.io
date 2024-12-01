@@ -64,31 +64,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sections.forEach(section => observer.observe(section));
 });
-
-// Carousel functionality
 document.addEventListener("DOMContentLoaded", () => {
     const track = document.querySelector(".carousel-track");
     const images = Array.from(track.children);
-    const prevButton = document.getElementById("prev");
     const nextButton = document.getElementById("next");
+    const prevButton = document.getElementById("prev");
+    const imageWidth = images[0].getBoundingClientRect().width;
     let currentIndex = 0;
 
     const updateCarousel = () => {
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        track.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
     };
 
-    prevButton.addEventListener("click", () => {
-        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+    const goToNext = () => {
+        currentIndex = (currentIndex + 1) % images.length; // Loop back to start
         updateCarousel();
-    });
+    };
 
-    nextButton.addEventListener("click", () => {
-        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+    const goToPrev = () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length; // Loop to end
         updateCarousel();
-    });
+    };
 
-    // Auto-scroll carousel every 5 seconds
-    setInterval(() => {
-        nextButton.click();
-    }, 5000);
+    // Add button functionality
+    nextButton.addEventListener("click", goToNext);
+    prevButton.addEventListener("click", goToPrev);
+
+    // Auto-scroll every 2 seconds
+    setInterval(goToNext, 2000);
 });
