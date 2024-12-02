@@ -6,6 +6,13 @@ body {
     background-color: #f5f5f5;
 }
 
+.logo {
+    width: 125px;
+    /* Adjust width as needed */
+    height: 125px;
+    /* Adjust height as needed */
+}
+
 h1,
 h2 {
     color: #333;
@@ -25,9 +32,9 @@ h2 {
 }
 
 .hero-img {
-    width: 75%;
+    width: 85%;
     height: auto;
-    transform: scale(0.70);
+    transform: scale(0.80);
     size: auto;
 }
 
