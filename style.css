@@ -20,12 +20,15 @@ h2 {
     /* Use semicolons and remove quotes */
 
     padding: 10px;
+    padding-bottom: 0;
     text-align: center;
 }
 
 .hero-img {
     width: 75%;
     height: auto;
+    transform: scale(0.70);
+    size: auto;
 }
 
 /* Navbar Styles */
@@ -108,56 +111,6 @@ footer {
 }
 
 
-.carousel {
-    position: relative;
-    width: 900px;
-    height: 400px;
-    /* Adjust based on your layout */
-    overflow: hidden;
-    margin: auto;
-}
-
-.carousel-track-container {
-    overflow: hidden;
-    width: 100%;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-image {
-    min-width: 100%;
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 50%;
-    z-index: 2;
-}
-
-#prev {
-    left: 10px;
-}
-
-#next {
-    right: 10px;
-}
-
-.carousel-button:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-}
 
 
 /* Form Styles */
@@ -311,6 +264,19 @@ body {
 h1 {
     text-align: center;
     color: #333;
+    margin-bottom: 0px;
+    margin-top: 1px;
+}
+
+h3 {
+    text-align: center;
+    color: #333;
+
+}
+
+header.hero h3 {
+    margin-top: 0;
+    /* Or margin-bottom: 0; if that's the cause */
 }
 
 #navigation {
@@ -443,4 +409,96 @@ h1 {
 /* Optional: Center align the Back Link on the detail page */
 .detail-container {
     text-align: center;
+}
+
+/* Carousel related */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: blockx;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.carousel-container {
+    position: relative;
+    width: 1400px;
+    /* Fixed width for carousel */
+    height: 400px;
+    /* Fixed height for carousel */
+    overflow: hidden;
+    padding-top: 20px;
+
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: 100vw;
+    /* Use viewport width for carousel width */
+    height: auto;
+    /* Maintain aspect ratio */
+    max-width: 100%;
+    /* Prevent overflow on larger screens */
+}
+
+.carousel-item {
+    flex: 1 0 100%;
+    width: auto;
+    display: block;
+    /* Match carousel container width */
+    height: auto;
+    /* Match carousel container height */
+    box-sizing: border-box;
+
+}
+
+.carousel img {
+    width: 100%;
+    /* Make images occupy the full container width */
+    flex-shrink: 0;
+    /* Prevent images from shrinking */
+    padding-left: auto;
+}
+
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 100;
+}
+
+@media (min-width: 768px) {
+    .carousel {
+        width: 80vw;
+        /* Adjust width for larger screens */
+    }
+}
+
+@media (min-width: 1200px) {
+    .carousel {
+        width: 60vw;
+        /* Adjust width for even larger screens */
+    }
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
 }

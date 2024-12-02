@@ -36,19 +36,7 @@ content.forEach(item => {
     dynamicSection.appendChild(section);
 });
 
-// Our Work Gallery
-const projects = [{ title: "Highway Construction", image: "images/highway.jpg" }, { title: "Commercial Towers", image: "images/commercial.jpg" }, { title: "Smart City Projects", image: "images/smart-city.jpg" }, { title: "Irrigation Works", image: "images/irrigation.jpg" }];
 
-const projectGallery = document.getElementById("projects");
-projects.forEach(project => {
-    const projectDiv = document.createElement("div");
-    projectDiv.className = "project";
-    projectDiv.innerHTML = `
-        <img src="${project.image}" alt="${project.title}">
-        <h2>${project.title}</h2>
-    `;
-    projectGallery.appendChild(projectDiv);
-});
 
 // Add fade-in animations to sections when they scroll into view
 document.addEventListener("DOMContentLoaded", () => {
@@ -64,32 +52,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sections.forEach(section => observer.observe(section));
 });
-document.addEventListener("DOMContentLoaded", () => {
-    const track = document.querySelector(".carousel-track");
-    const images = Array.from(track.children);
-    const nextButton = document.getElementById("next");
-    const prevButton = document.getElementById("prev");
-    const imageWidth = images[0].getBoundingClientRect().width;
-    let currentIndex = 0;
 
-    const updateCarousel = () => {
-        track.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
-    };
+const carousel = document.querySelector('.carousel');
+const items = document.querySelectorAll('.carousel-item');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
 
-    const goToNext = () => {
-        currentIndex = (currentIndex + 1) % images.length; // Loop back to start
-        updateCarousel();
-    };
+let currentIndex = 0;
 
-    const goToPrev = () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length; // Loop to end
-        updateCarousel();
-    };
+function updateCarousel() {
+    const offset = -currentIndex * 100;
+    carousel.style.transform = `translateX(${offset}%)`;
+}
 
-    // Add button functionality
-    nextButton.addEventListener("click", goToNext);
-    prevButton.addEventListener("click", goToPrev);
-
-    // Auto-scroll every 2 seconds
-    setInterval(goToNext, 2000);
+prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + items.length) % items.length;
+    updateCarousel();
 });
+
+nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % items.length;
+    updateCarousel();
+});
+
+// Initialize carousel
+updateCarousel();
+
